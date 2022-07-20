@@ -17,6 +17,7 @@ import java.awt.event.ActionListener;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 public class NewReportScreen extends JDialog {
 	private JTextField txtId;
@@ -27,6 +28,9 @@ public class NewReportScreen extends JDialog {
 	private JTextField txtActualizadoFecha;
 
 	NewReportController controller = new NewReportController();
+	private JTextField txtOrden;
+	private JTextField txtCodigoAPI;
+	private JTextField txtRutaInforme;
 	/**
 	 * Launch the application.
 	 */
@@ -48,39 +52,52 @@ public class NewReportScreen extends JDialog {
 	 * Create the dialog.
 	 */
 	public NewReportScreen() {
-		setBounds(100, 100, 425, 490);
+		setBounds(100, 100, 839, 641);
 		
 		JLabel lblNewLabel = new JLabel("ID INFORME");
+		lblNewLabel.setBounds(20, 69, 89, 22);
 		
 		txtId = new JTextField();
+		txtId.setBounds(153, 71, 61, 19);
 		txtId.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("CODIGO INFORME");
+		lblNewLabel_1.setBounds(335, 69, 126, 22);
 		
 		txtCod = new JTextField();
+		txtCod.setBounds(476, 71, 185, 19);
 		txtCod.setColumns(10);
 		
 		JLabel lblCreadoPor = new JLabel("CREADO POR");
+		lblCreadoPor.setBounds(20, 123, 90, 22);
 		
 		txtCreadoPor = new JTextField();
+		txtCreadoPor.setBounds(153, 125, 131, 19);
 		txtCreadoPor.setColumns(10);
 		
 		JLabel lblCreadoFecha = new JLabel("CREADO FECHA");
+		lblCreadoFecha.setBounds(332, 123, 90, 22);
 		
 		txtCreadoFecha = new JTextField();
+		txtCreadoFecha.setBounds(478, 123, 131, 19);
 		txtCreadoFecha.setColumns(10);
 		
 		JLabel lblActualizadoPor = new JLabel("ACTUALIZADO POR");
+		lblActualizadoPor.setBounds(21, 189, 126, 22);
 		
 		txtActualizadoPor = new JTextField();
+		txtActualizadoPor.setBounds(153, 191, 131, 19);
 		txtActualizadoPor.setColumns(10);
 		
 		JLabel lblActualizadoFecha = new JLabel("ACTUALIZADO FECHA");
+		lblActualizadoFecha.setBounds(335, 189, 152, 22);
 		
 		txtActualizadoFecha = new JTextField();
+		txtActualizadoFecha.setBounds(478, 191, 131, 19);
 		txtActualizadoFecha.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Crear Informe");
+		btnNewButton.setBounds(335, 570, 97, 34);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Informe informe = new Informe();
@@ -97,78 +114,61 @@ public class NewReportScreen extends JDialog {
 		});
 		
 		JButton btnNewButton_1 = new JButton("X");
-		GroupLayout groupLayout = new GroupLayout(getContentPane());
-		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(20)
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-									.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-										.addComponent(lblNewLabel_1, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
-										.addComponent(lblNewLabel, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 89, GroupLayout.PREFERRED_SIZE))
-									.addComponent(lblCreadoPor, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
-								.addComponent(lblCreadoFecha, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-								.addComponent(lblActualizadoPor, GroupLayout.PREFERRED_SIZE, 126, GroupLayout.PREFERRED_SIZE)
-								.addComponent(lblActualizadoFecha, GroupLayout.PREFERRED_SIZE, 152, GroupLayout.PREFERRED_SIZE))
-							.addGap(29))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(68)
-							.addComponent(btnNewButton)
-							.addGap(32)))
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(btnNewButton_1)
-							.addContainerGap(119, Short.MAX_VALUE))
-						.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-								.addComponent(txtActualizadoPor, GroupLayout.PREFERRED_SIZE, 131, GroupLayout.PREFERRED_SIZE)
-								.addComponent(txtActualizadoFecha, GroupLayout.PREFERRED_SIZE, 131, GroupLayout.PREFERRED_SIZE)
-								.addComponent(txtCreadoFecha, GroupLayout.PREFERRED_SIZE, 131, GroupLayout.PREFERRED_SIZE)
-								.addComponent(txtCreadoPor, GroupLayout.PREFERRED_SIZE, 131, GroupLayout.PREFERRED_SIZE)
-								.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-									.addGroup(groupLayout.createSequentialGroup()
-										.addComponent(txtCod, GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
-										.addPreferredGap(ComponentPlacement.RELATED))
-									.addComponent(txtId, GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)))
-							.addGap(77))))
-		);
-		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(69)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtId, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(37)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtCod, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(36)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblCreadoPor, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtCreadoPor, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(35)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblCreadoFecha, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtCreadoFecha, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(40)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblActualizadoPor, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtActualizadoPor, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(34)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblActualizadoFecha, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtActualizadoFecha, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(btnNewButton)
-						.addComponent(btnNewButton_1))
-					.addContainerGap())
-		);
-		getContentPane().setLayout(groupLayout);
+		btnNewButton_1.setBounds(478, 570, 61, 34);
+		getContentPane().setLayout(null);
+		getContentPane().add(lblNewLabel_1);
+		getContentPane().add(lblNewLabel);
+		getContentPane().add(lblCreadoPor);
+		getContentPane().add(lblCreadoFecha);
+		getContentPane().add(lblActualizadoPor);
+		getContentPane().add(lblActualizadoFecha);
+		getContentPane().add(btnNewButton);
+		getContentPane().add(btnNewButton_1);
+		getContentPane().add(txtActualizadoPor);
+		getContentPane().add(txtActualizadoFecha);
+		getContentPane().add(txtCreadoFecha);
+		getContentPane().add(txtCreadoPor);
+		getContentPane().add(txtCod);
+		getContentPane().add(txtId);
+		
+		JLabel lblNewLabel_2 = new JLabel("ORDEN(En la carpeta)");
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblNewLabel_2.setBounds(20, 251, 127, 13);
+		getContentPane().add(lblNewLabel_2);
+		
+		txtOrden = new JTextField();
+		txtOrden.setBounds(155, 249, 96, 19);
+		getContentPane().add(txtOrden);
+		txtOrden.setColumns(10);
+		
+		JLabel lblNewLabel_3 = new JLabel("Codigo API");
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblNewLabel_3.setBounds(335, 251, 71, 13);
+		getContentPane().add(lblNewLabel_3);
+		
+		txtCodigoAPI = new JTextField();
+		txtCodigoAPI.setBounds(478, 248, 315, 19);
+		getContentPane().add(txtCodigoAPI);
+		txtCodigoAPI.setColumns(10);
+		
+		JLabel lblNewLabel_4 = new JLabel("RUTA INFORME");
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblNewLabel_4.setBounds(20, 335, 89, 13);
+		getContentPane().add(lblNewLabel_4);
+		
+		txtRutaInforme = new JTextField();
+		txtRutaInforme.setBounds(153, 333, 640, 19);
+		getContentPane().add(txtRutaInforme);
+		txtRutaInforme.setColumns(10);
+		
+		JButton btnCargarParametros = new JButton("Cargar Parametros");
+		btnCargarParametros.setBounds(153, 425, 126, 21);
+		getContentPane().add(btnCargarParametros);
+		
+		JLabel lblNewLabel_5 = new JLabel("Elegir informe");
+		lblNewLabel_5.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblNewLabel_5.setBounds(20, 426, 89, 17);
+		getContentPane().add(lblNewLabel_5);
 
 	}
 }
